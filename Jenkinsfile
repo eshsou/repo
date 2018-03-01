@@ -1,6 +1,9 @@
 pipeline {
     agent { label 'master' }
     stages {
+	stage('configure') {
+		sh ''
+	}
         stage('build') {
             steps {
                 sh 'echo step1'
