@@ -1,8 +1,15 @@
 pipeline {
     agent { label 'master' }
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE    = 'sqlite'
+    }
     stages {
 	stage('configure') {
-		sh ''
+            steps {
+		
+		sh 'printenv'
+	    }		
 	}
         stage('build') {
             steps {
